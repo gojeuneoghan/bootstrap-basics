@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <!-- IE로 접속했을 때 최신 표준 모드로 렌더링 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 반응형으로 디자인하기 위해 viewport 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap start</title>
+    <!-- 부트스트랩 CSS 파일 연결: bootstrap.min.css는 bootstrap.css를 축소(minify)한 파일 -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  </head>
+  <style>
+    div {
+      border: 1px solid gray;
+    }
+  </style>
+  <body>
+    <h1>Hello world!</h1> 
+
+    <!-- 고정 폭 컨테이너: 화면을 키웠을 때 왼쪽과 오른쪽에 빈 공간이 생김 -->
+    <div class="container"> 
+      <div class="row"> <!-- div.row로 하나의 줄 생성 -->
+         <!-- 전체 너비를 차지하는 열 -->
+         <div class="col-xs-12">Hello bootstrap!</div> 
+         <!-- 비율: 6 / 4 / 2로 레이아웃 구성 -->
+         <div class="col-6">div.col-xs-6</div>  <!-- 화면에서 6/12 비율을 차지 -->
+         <div class="col-4">div.col-xs-4</div>  <!-- 화면에서 4/12 비율을 차지 -->
+         <div class="col-2">div.col-xs-2</div>  <!-- 화면에서 2/12 비율을 차지 -->
+      </div> 
+    </div>
+
+    <!-- 유동 폭 컨테이너: 화면을 키웠을 때 왼쪽과 오른쪽에 빈 공간이 없음 -->
+    <div class="container-fluid"> 
+      <div class="row">
+         <!-- 전체 너비를 차지하는 열 -->
+         <div class="col-xs-12">Hello bootstrap!</div>
+         <!-- 비율: 6 / 4 / 2로 레이아웃 구성 -->
+         <div class="col-6">div.col-xs-6</div> 
+         <div class="col-4">div.col-xs-4</div> 
+         <div class="col-2">div.col-xs-2</div> 
+      </div>
+    </div>
+
+    <!-- 부트스트랩 JavaScript 파일 연결: bootstrap.min.js는 bootstrap.js를 축소(minify)한 파일 -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+<!-- 부트스트랩 파일 사용 방법:
+     - 부트스트랩 파일은 https://getbootstrap.com (영문판) 또는 https://getbootstrap.kr (한글판)에서 다운로드 가능
+     - 메인 화면에서 다운로드 클릭 후 컴파일된 CSS와 JS 파일을 다운로드하고 압축 해제
+     - CSS 파일은 'css' 폴더에, JS 파일은 'js' 폴더에 넣어 사용
+
+.container와 .container-fluid의 차이:
+     - .container:
+       * 각각의 디바이스 사이즈(타블렛, 작은 모니터, 큰 모니터)에 따라 고정폭(width)이 설정됨
+       * 가로 해상도 767px 이하일 때는 100%의 너비를 사용
+       * 가로 해상도:
+           - 768px 이상: 너비 750px
+           - 992px 이상: 너비 970px
+           - 1200px 이상: 너비 1170px
+     - .container-fluid:
+       * 가로 해상도에 관계없이 항상 100%의 가로폭을 사용
+
+그리드 시스템 구조:
+     - 최상위 컨테이너 요소 안쪽에 div.row를 사용하여 행(row)을 생성
+     - .row 안에 .col-* 클래스를 사용하여 열(column)을 생성
+
+그리드 클래스(.col-*):
+     - .row 안에서 열의 크기를 설정하는 데 사용
+     - 형식: .col-[브레이크포인트]-[숫자]
+       * 브레이크포인트:
+           - xs: 항상 적용 (부트스트랩 5에서는 생략 가능)
+           - sm: 가로 해상도 768px 이상 적용
+           - md: 가로 해상도 992px 이상 적용
+           - lg: 가로 해상도 1200px 이상 적용
+       * 숫자: 열의 크기를 나타내며, 총합은 최대 12 (1부터 12까지 사용 가능)
+
+예시 설명:
+     - 비율이 합산하여 총합이 "12"이면 행(row)을 꽉 채움.
+     - 합산이 "12"보다 작으면 오른쪽에 빈 공간이 생김.
+     - 합산이 "12"보다 크면 다음 줄로 넘어감.
+
+예제:
+     ex1) 비율: 6 / 4 / 2 (총합 = 12)
+          * 행(row)을 꽉 채움.
+     
+     ex2) 비율: 5 / 5 (총합 = 10)
+          * 오른쪽에 "2"만큼 빈 공간이 생김.
+     
+     ex3) 비율: 5 / 5 / 4 (총합 = 14)
+          * 마지막 열(column)이 다음 줄로 넘어감.
+
+결론:
+     - 부트스트랩의 그리드 시스템은 반응형 디자인을 쉽게 구현할 수 있도록 설계됨.
+     - Open with Live Server를 통해 브라우저에서 확인하면 `container`와 `container-fluid`의 차이를 확인 가능.
+     - 브라우저 크기를 조절하면서 레이아웃 비율(6/4/2)이 반응형으로 조절되는 것을 확인 가능.
+--> 
